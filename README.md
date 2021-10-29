@@ -21,7 +21,7 @@ In addition, this project will include:
   3. The scores would be accumulated before the game ends. The number of avatar remaining would be the score for that specific stage.
   4. A production README
   
-![alt text](https://github.com/ms0372631/Javascript-Project/blob/eade80975bc850aab8e2c56bb921beee74dacfbc/wireframe.png?raw=true)
+![alt text](https://github.com/ms0372631/Javascript-Project/blob/a9aaf7838eb3c923c4f2d46ccc7fdcc07e1600a4/wireframe.png?raw=true)
 
 
 The project would be perhaps using Canvas API or other possible Javascript libraries that haven't been decided yet.
