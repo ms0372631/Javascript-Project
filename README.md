@@ -5,7 +5,7 @@
 
 In Squid Game, users will be able to :
 
-  1. The kind of glass of each glass would be shown in the beginning of the game
+  1. The kind of glass of all glassed would be shown in the beginning of the game
   2. Choose which piece of glass between the two to step on for next step
   3. The glass would break and lose an avatar if stepping on a regular piece of glass
   4. If at least one avatar has reached the finish line, the game will continue, otherwise the game ends
