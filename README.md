@@ -10,7 +10,7 @@ In Squid Game, users will be able to :
   2. With the frequeny of the clicks the user attemps being the accerlation of the moving avatar.
   3. Hide behind the obstacles so that the host would not be able to see any movements from the user.
   4. The host would not attack the user if the user is stationary within the host's sight.
-  5. Move to the finishline would win the stage.
+  5. Move to the finishline within time limit would win the stage.
 
 
 In addition, this project will include:
