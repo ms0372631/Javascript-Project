@@ -22,3 +22,14 @@ In addition, this project will include:
   
 ![alt text](https://github.com/ms0372631/Javascript-Project/blob/eade80975bc850aab8e2c56bb921beee74dacfbc/wireframe.png?raw=true)
 
+
+The project would be perhaps using Canvas API or other possible Javascript libraries that haven't been decided yet.
+
+
+Project Timeline:
+
+  1. Friday Afternoon & Weekend: decide the libraries and APIs and have the setup the general structure of the game, and have the user interface setup
+  2. Monday: Have the whole game visualization setup
+  3. Tuesday: Implement the game rules and logics 
+  4. Wednesday: Implement the game rules and logics 
+  5. Thursday Morning: Final testing and prepare for presentation demo
