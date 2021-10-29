@@ -1,0 +1,39 @@
+{
+  "name": "Javascript-Project",
+  "version": "1.0.0",
+  "description": "This project is a recently popular Netflix series \"Squid Game\" inspired game, or more commonly known as the \"Red Light, Green Light\" game, or to be more specific, it is more like a game with hybrid rules of \"Red Light, Green Light\" and \"Hide and Seek\".   The player would start from the bottom of the gameplay and make its way to the host. The player could only move when the host turns its head back and could not see the player, while there are some trees that the player could hide behind from the host's sight. If the host sees the player while it turns its head over, the player would be killed by the laser beam that is shot from the host's eyes. The goal of the game is to get to the finish line within the time limit. There are also other factors like acceleration when the player starts to run and deceleration when the player tries to stop running. The game would be increasingly harder as users get to the later stages by having less trees or higher frequency of head spinning from the host.",
+  "main": "webpack.config.js",
+  "dependencies": {
+    "@babel/core": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "babel-loader": "^8.2.3",
+    "core-js": "^3.19.0",
+    "css-loader": "^6.5.0",
+    "mini-css-extract-plugin": "^2.4.3",
+    "regenerator-runtime": "^0.13.9",
+    "sass": "^1.43.4",
+    "sass-loader": "^12.3.0",
+    "webpack": "^5.61.0",
+    "webpack-cli": "^4.9.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --watch --mode=development",
+    "build": "webpack --mode=production"
+  },
+  "browserslist": [
+    "defaults"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ms0372631/Javascript-Project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ms0372631/Javascript-Project/issues"
+  },
+  "homepage": "https://github.com/ms0372631/Javascript-Project#readme"
+}
