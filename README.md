@@ -19,5 +19,6 @@ In addition, this project will include:
   2. The user would be told of the rules of the game with instructions before it starts the game.
   3. The scores would be accumulated before the game ends. The time remaining would be the score for that specific stage.
   4. A production README
+  
+![alt text](https://github.com/ms0372631/Javascript-Project/blob/eade80975bc850aab8e2c56bb921beee74dacfbc/wireframe.png?raw=true)
 
-  ![alt text](https://github.com/ms0372631/[reponame]/blob/[branch]/image.jpg?raw=true
