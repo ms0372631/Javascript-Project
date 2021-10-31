@@ -3,7 +3,8 @@ import Bridge from "./game";
 import Avatar from "./avatar";
 
 class Game {
-  constructor(ele) {
+  constructor(canvas) {
+    this.canvas = canvas;
     this.ava_num = make_ava;
     this.score = 0;
     this.timeLimit = 60;
@@ -13,6 +14,8 @@ class Game {
     this.gameOver = false;
     this.avatars = [];
 }
+
+
 
   start() {
     this.startNewLevel();
@@ -41,7 +44,7 @@ class Game {
     }
   }
 
-
+  Make_move()
 
   NextStage() {
     this.start();
@@ -87,5 +90,7 @@ class Game {
       return true;
   }
 }
+
+
 export default Game;
 
