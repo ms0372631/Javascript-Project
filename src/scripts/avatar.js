@@ -2,9 +2,20 @@ import Game from "./game";
 import Bridge from "./bridge";
 
 class Avatar {
-  constructor(i, j, ctx) {
-    this.pos = [i, j];
+  constructor(ctx) {
     this.ctx = ctx;
+  }
+
+  draw() {
+    while (this.game.listofAvatars--) {
+      var ava = new Image();
+      var currentAva = this.game.listofAvatars.pop();
+      ava.onload = () => {
+        this.ctx.drawImage(ava, this.avaPosX, 125, 125);
+      };
+
+      avatar.src = "./dist/assets/images/bridges.png";
+    }
   }
 
   makeMove(i ,j) {

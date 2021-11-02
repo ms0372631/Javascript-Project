@@ -9,6 +9,7 @@ body {
   background-size: auto 100%;
   background-repeat: no-repeat;
   z-index: -1;
+  
 }
 
 #canvas-container {
@@ -18,7 +19,9 @@ body {
 #music-btn {
 
   position: relative;
-  left: 575px;
+  bottom: 0px;
+  left: 550px;
+  z-index: 30;
  
 }
 
@@ -29,12 +32,14 @@ body {
   position: relative;
   z-index: 10;
 }
+
 .game-btn {
   color: red;
   font-family: fantasy;
   font-size: x-large;
-  position: absolute;
-  bottom: 0;
+  position: relative;
+  left: 500;
+  bottom: 10;
   background-color: greenyellow;
   z-index: 20;
 }
@@ -45,18 +50,30 @@ body {
 }
 .game-menu {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  bottom: 10px;
   z-index: 10;
 }
 
 #text {
+  background-color: rgb(59, 199, 59, 0.5);
+
+  font-family: Optima, sans-serif;
+  font-size: x-large;
+  font-weight: bolder;
+  color: purple;
   text-align: center;
   position: absolute;
-  z-index: 10;
+  z-index: 20;
 }
 
+#start-btn {
+  bottom: 250px;
+  left: 220px;
+}
+
+#music-btn {
+  left: 550px;
+}
 #final {
   font-size: 40px;
 }

@@ -5,11 +5,15 @@ import RegularGlass from "./regular_glass";
 
 
 
+
 class GameView {
-  constructor(game, ctx) {
-    this.grid = this.makeGrid();
+  constructor(game, ctx, bridge) {
+    this.numofAvatar = game.numofAvatar;
+    this.bridge = bridge;
     this.game = game;
+    this.numofAvatar = 3;
     this.ctx = ctx;
+    this.avaPosX = 250;
     // this.bridge = bridge;
     // this.$canvas = $("#canvas");
     // this.$canvasOffset = $canvas.offset();
@@ -28,31 +32,31 @@ class GameView {
     // this.ctx.addEventListener("mouseout", this.handleMouseOut);
   }
 
-  makeGrid() {
-    const random = ["regular", "tempered"];
-    let grid = [];
-    for (let i = 1; i < 11; i++) {
-      if (random[Math.floor(Math.random() * 2)] === "regular") {
-        let tGlass = new TemperedGlass(i, 1);
-        let rGlass = new RegularGlass(i, 0);
-        grid.push([rGlass, tGlass]);
-      }
-      else {
-        let tGlass = new TemperedGlass(i, 0);
-        let rGlass = new RegularGlass(i, 1);
-        grid.push([tGlass, rGlass]);
-      }
-    }
-    return grid;
-  }
+ 
 
   draw() {
-    var img = new Image();
-  
-    img.onload = () => {
-      this.ctx.drawImage(img, 0, 0, 450, 875);
+    var timer = new Image()
+    var background = new Image();
+    var bridge = new Image();
+    timer.onload = () => {
+      this.ctx.drawImage(timer, 250, 250, 450, 875);
+      this.timer.play();
     };
-    img.src = "./dist/assets/images/background.png";
+    timer.src = ".dist/assets/images/timer.mp4";
+  
+    background.onload = () => {
+      this.ctx.drawImage(background, 0, 0, 450, 875);
+    };
+    background.src = "./dist/assets/images/background.png";
+
+    this.bridge.draw();
+    // this.avatar.draw();
+
+    while (this.numofAvatar--) {
+      currAva = this.numofAvatar.pop();
+      currAva.draw();
+    }
+
 
     
 

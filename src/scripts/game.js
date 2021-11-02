@@ -7,11 +7,14 @@ class Game {
     this.canvas = canvas;
     this.score = 0;
     this.timeLimit = 60;
-    this.numofAvatar = 10;
+    this.timeRemaining = 30;
+    this.numofAvatar = 3;
+    this.listofAvatars = [];
     this.level = 0;
     this.levelStarted = false;
     this.gameOver = false;
-    this.avatars = [];
+    this.CreateAvatar();
+    // setInterval(this.Timer.bind(this), 1000);
 }
 
 
@@ -21,21 +24,29 @@ class Game {
 
   }
 
+  CreateAvatar() {
+    while (this.listofAvatars.length < this.numofAvatar) {
+      const newAva = new Avatar();
+      this.listofAvatars.push(newAva);
+    }
+  }
+  
+
   Timer() {
-    this.timeLimit--;
-    var minutes = Math.floor(this.timeLimit / 60);
-    var seconds = this.timeLimit - (minutes * 60);
-    var timeString = this.addZeros(minutes) + ":" + this.addZeros(seconds);
-    if (this.timeLimit === 0) {
+    if (this.timeRemaining == 0)
       this.gameover();
+    while (this.timeRemaining--) {
+      this.timeLimit--;
+      var minutes = Math.floor(this.timeLimit / 60);
+      var seconds = this.timeLimit - (minutes * 60);
+      var timeString = minutes + ":" + seconds;
+      if (this.timeLimit === 0) {
+        this.gameover();
+      }
     }
   }
 
-  CreateAvatars() {
-    for (let i = 0; i < this.numofAvatars; i++) {
-      this.avatars.push(Avatar.new(-1, -1));
-    }
-  }
+  
 
   Make_move() {
 
@@ -49,7 +60,9 @@ class Game {
   stage() {
     
   }
-
+  lose() {
+    
+  }
 
 
   start() {
