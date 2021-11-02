@@ -6,14 +6,14 @@ class Glass {
     this.pos = [i, j];
     this.hasAvatar = false;
     this.isBroken = false;
-    this.beingStepped();
+    // this.beingStepped();
   }
 
-  beingStepped() {
-    for (let i = 0; i < Bridge.spotTaken.length; i++)
-      if (Bridge.spotTaken[i] === this.pos)
-        this.hasAvatar = true;
-  }
+  // beingStepped() {
+  //   for (let i = 0; i < Bridge.spotTaken.length; i++)
+  //     if (Bridge.spotTaken[i] === this.pos)
+  //       this.hasAvatar = true;
+  // }
 
 }
 

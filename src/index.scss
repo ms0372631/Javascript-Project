@@ -1,5 +1,48 @@
+body {
+  background-image: url('https://cutewallpaper.org/21/circus-backgrounds/Circus-Wallpapers-HD-PixelsTalkNet.jpg');
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  z-index: -1;
+} 
+
+#canvas-container {
+  position: relative;
+}
 
 
-#main {
-  color: blue;
+
+#canvas {
+  display: flex;
+  position: relative;
+  background-color: cyan;
+  z-index: 10;
+}
+
+.hidden {
+
+}
+
+
+
+.game-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+
+#game-over span,
+#start span {
+  line-height: 20px;
+  padding: 20px;
+  z-index: 20;
+}
+
+#final {
+  font-size: 40px;
 }

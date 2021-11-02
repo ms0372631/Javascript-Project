@@ -3,26 +3,42 @@ import Game from "./scripts/game";
 import GameView from "./scripts/game_view";
 import Bridge from "./scripts/bridge";
 
+window.addEventListener("DOMContentLoaded", () => {
 
-window.addEventListener('DOMContentLoaded', function(event) {
   const canvas = document.getElementById('canvas');
   const ctx2d = canvas.getContext('2d');
   const game = new Game(ctx2d);
+  // const bridge = new Bridge();
   const game_view = new GameView(game, ctx2d);
   const startButton = document.getElementById("start-btn");
   const restartButton = document.getElementById("restart-btn");
-  const muteBtn = document.getElementById("mute-btn");
+  const musicButton = document.getElementById("music-btn");
+  const music = document.getElementById("music");
+  const text = document.getElementById("text");
 
 
-  startBtn.classList.remove("hidden");
+  startButton.removeAttribute("hidden");
   startButton.addEventListener("click", () => {
-    game_view.start();
-    startButton.classList.add("hidden");
+    game_view.draw();
+    startButton.setAttribute("hidden", null);
+    musicButton.removeAttribute("hidden");
     music.play();
+    text.setAttribute("hidden", null);
   });
 
-  restartButton.addEventListener("click", () => {
-    game_view.start();
+  // restartButton.addEventListener("click", () => {
+  //   game_view.start();
+  // });
+
+  musicButton.addEventListener("click", e => {
+    e.stopPropagation();
+    if (music.paused) {
+      music.play();
+      musicButton.innerText = "Mute";
+    } else {
+      music.pause();
+      musicButton.innerText = "Unmute";
+    }
   });
 
 

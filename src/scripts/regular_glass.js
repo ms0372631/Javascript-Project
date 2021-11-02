@@ -5,7 +5,7 @@ import Game from "./game";
 class RegularGlass extends Glass{
   constructor(i, j) {
     super();
-    this.checkBroken();
+    // this.checkBroken();
   }
 
   checkBroken() {

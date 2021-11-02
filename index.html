@@ -6,22 +6,41 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <link rel="stylesheet" href="./dist/main.css" />
+  <link rel="stylesheet" type="text/css" href="./dist/main.css"  />
+  <audio id="music" src="./dist/assets/audio/background_music.mp3"></audio>
   <script src="./dist/main.js"></script>
+
   <title>Welcome to the Squid Game</title>
 </head>
 
 <body>
-  <canvas id="canvas" width="450" height="850"></canvas>
+  
+ 
+  <span hidden id="music-btn" class="game-btn">Mute</span>
+  <div id="canvas-container">
+    <canvas id="canvas" width="450" height="875"></canvas>
+    <div id="start" class="game-menu">
+      <span hidden id="start-btn" class="game-btn" >Start</span>
+      <div id="game-over" class="game-menu">
+        <span hidden id="final">Game Over</span>
+        <span hidden id="final">Final Score <span id="final-score">0</span></span>
+        <span hidden id="restart-btn" class="game-btn">Play again</span>
+      </div>
+    </div>
+    
+  </div>
+      <div id="text">
+        <p>
+          " Are you ready for one of the most exciting stage of the Squid Game ? Try your best to win $38M and enjoy the
+          rest of your life not worrying about a thing!"
+        </p>
+        <p>
+          "......"
+        </p>
+      </div>
+
 </body>
 
-<div id="start" class="game-menu">
-  <span id="start-btn" class="game-btn hidden">Start</span>
-</div>
-<div id = "game-over" class="game-menu hidden">
-  <span id="final">Game Over</span>
-  <span id="final">Final Score <span id="final-score">0</span></span>
-  <span id="restart-btn" class="game-btn">Play again</span>
-</div>
+
 
 </html>

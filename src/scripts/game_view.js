@@ -1,32 +1,38 @@
 
 import Game from "./game";
+import TemperedGlass from "./tempered_glass";
+import RegularGlass from "./regular_glass";
+
+
 
 class GameView {
   constructor(game, ctx) {
-    this.grid = makeGrid();
+    this.grid = this.makeGrid();
     this.game = game;
     this.ctx = ctx;
-    this.$canvas = $("#canvas");
-    this.$canvasOffset = $canvas.offset();
-    this.offsetX = canvasOffset.left;
-    this.offsetY = canvasOffset.top;
-    this.scrollX = this.$canvas.scrollLeft();
-    this.scrollY = this.$canvas.scrollTop();
+    // this.bridge = bridge;
+    // this.$canvas = $("#canvas");
+    // this.$canvasOffset = $canvas.offset();
+    // this.offsetX = canvasOffset.left;
+    // this.offsetY = canvasOffset.top;
+    // this.scrollX = this.$canvas.scrollLeft();
+    // this.scrollY = this.$canvas.scrollTop();
     this.backgroundReady = false;
-    this.backgroundImg.src = "./assets.background.png";
+   
     this.isDown = false;
 
 
-    this.ctx.addEventListener("mousedown", handleMouseDown);
-    this.ctx.addEventListener("mouseup", handleMouseUp);
-    this.ctx.addEventListener("mouseout", handleMouseOut);
+
+    // this.ctx.addEventListener("mousedown", this.handleMouseDown);
+    // this.ctx.addEventListener("mouseup", this.handleMouseUp);
+    // this.ctx.addEventListener("mouseout", this.handleMouseOut);
   }
 
   makeGrid() {
     const random = ["regular", "tempered"];
     let grid = [];
     for (let i = 1; i < 11; i++) {
-      if (random[getRandomInt(1)] === "regular") {
+      if (random[Math.floor(Math.random() * 2)] === "regular") {
         let tGlass = new TemperedGlass(i, 1);
         let rGlass = new RegularGlass(i, 0);
         grid.push([rGlass, tGlass]);
@@ -41,24 +47,27 @@ class GameView {
   }
 
   draw() {
-    this.ctx.clearRect(0, 0, canvas.width, canvas.height);
-    for (let i = 0; i < rowCount; i++) {
-      let row = [];
-      for (let j = 0; j < colCount; j++) {
-        this.ctx.rect(i * colWidth, j * rowHeight, colWidth, rowHeight);
-        this.ctx.stroke();
-      }
-    }
+    var img = new Image();
+  
+    img.onload = () => {
+      this.ctx.drawImage(img, 0, 0, 450, 875);
+    };
+    img.src = "./dist/assets/images/background.png";
+
+    
+
+  
+    // this.ctx.clearRect(0, 0, canvas.width, canvas.height);
+    // for (let i = 0; i < rowCount; i++) {
+    //   let row = [];
+    //   for (let j = 0; j < colCount; j++) {
+    //     this.ctx.rect(i * colWidth, j * rowHeight, colWidth, rowHeight);
+    //     this.ctx.stroke();
+    //   }
+    // }
   }
 
-  start () {
-    // ...do something specific to an instance
-    let gv = this;
-    setInterval(function() {
-      gv.game.draw(gv.ctx);
-    }, 500);
-  }
-
+  
   static ClassMethod() {
       // ...logic not specific to an instance
   }
@@ -100,7 +109,7 @@ class GameView {
     var lastCol = parseInt(mouseX / colWidth);
     var lastRow = parseInt(mouseY / rowHeight);
 
-    var legnth = Math.max(Math.abs(startCol - lastCol) + 1, Math.abs(startRow - lastRow) + 1);
+    var length = Math.max(Math.abs(startCol - lastCol) + 1, Math.abs(startRow - lastRow) + 1);
     var dx = 0;
     var dy = 0;
     var x = startCol;
@@ -127,18 +136,18 @@ class GameView {
 
 }
 
-for (var i = 0; i <= 640; i += 40) {
-  context.beginPath();
-  context.moveTo(0, i);
-  context.lineTo(640, i);
-  context.closePath();
-  context.stroke();
+// for (var i = 0; i <= 640; i += 40) {
+//   // context.beginPath();
+//   context.moveTo(0, i);
+//   context.lineTo(640, i);
+//   context.closePath();
+//   context.stroke();
 
-  context.beginPath();
-  context.moveTo(i, 0);
-  context.lineTo(i, 640);
-  context.closePath();
-  context.stroke();
-}
+//   context.beginPath();
+//   context.moveTo(i, 0);
+//   context.lineTo(i, 640);
+//   context.closePath();
+//   context.stroke();
+// }
 
 export default GameView;

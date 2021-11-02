@@ -11,14 +11,14 @@ class Avatar {
     if (Bridge.bridge[i][j]) {
 
     }
-    Game.
+
   }
 
-  loadImage() {
-    if (backgroundReady) {
-      context
-    }
-  }
+  // loadImage() {
+  //   if (backgroundReady) {
+  //     context
+  //   }
+  // }
 }
 
 export default Avatar;

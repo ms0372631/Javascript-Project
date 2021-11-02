@@ -2,7 +2,7 @@ import TemperedGlass from "./tempered_glass";
 import RegularGlass from "./regular_glass";
 
 class Bridge {
-  constructor(ctx) {
+  constructor() {
     this.grid = Bridge.BuildBridge();
     this.spotTaken = [];
   }
@@ -26,3 +26,4 @@ class Bridge {
  
 }
 
+export default Bridge;

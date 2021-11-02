@@ -5,7 +5,6 @@ import Avatar from "./avatar";
 class Game {
   constructor(canvas) {
     this.canvas = canvas;
-    this.ava_num = make_ava;
     this.score = 0;
     this.timeLimit = 60;
     this.numofAvatar = 10;
@@ -15,11 +14,6 @@ class Game {
     this.avatars = [];
 }
 
-
-
-  start() {
-    this.startNewLevel();
-  }
 
   startNewLevel() {
     this.levelStarted = true;
@@ -33,7 +27,6 @@ class Game {
     var seconds = this.timeLimit - (minutes * 60);
     var timeString = this.addZeros(minutes) + ":" + this.addZeros(seconds);
     if (this.timeLimit === 0) {
-      outofTime();
       this.gameover();
     }
   }
@@ -44,7 +37,9 @@ class Game {
     }
   }
 
-  Make_move()
+  Make_move() {
+
+  }
 
   NextStage() {
     this.start();
@@ -55,13 +50,11 @@ class Game {
     
   }
 
-  make_ava() {
 
-  }
-  
 
   start() {
-    this.toggleScene('start');
+    // this.toggleScene('start');
+    this.startNewLevel();
 
     //image hide 
     //image show
@@ -86,7 +79,7 @@ class Game {
   }
 
   gameover() {
-    if (this.ava_num === 0 || )
+    if (this.ava_num === 0)
       return true;
   }
 }
