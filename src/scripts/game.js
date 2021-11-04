@@ -1,7 +1,7 @@
 
-import Bridge from "./game";
-import Avatar from "./avatar";
 import GameView from "./game_view";
+import Avatar from "./avatar";
+
 
 class Game {
   constructor(ctx, bridge) {
@@ -16,9 +16,9 @@ class Game {
     this.gameOver = false;
     this.currentPos = [-1, -1];
     this.passedby = [];
+    this.defaultPos = [-60, 750];
     this.CreateAvatars();
     this.Make_move();
-    this.defaultPos = [50, 700];
     // setInterval(this.Timer.bind(this), 1000);
     // posMap = {
     //   "01": [],
@@ -36,7 +36,8 @@ class Game {
   CreateAvatars() {
     while (this.listofAvatars.length < this.numofAvatar) {
       this.defaultPos[0] += 125;
-      const newAva = new Avatar(this.ctx, this.defaultPos.slice());
+      let dup = this.defaultPos.slice();
+      const newAva = new Avatar(this.ctx, dup);
       this.listofAvatars.push(newAva);
     }
   }
@@ -72,13 +73,13 @@ class Game {
             // this.Make_move();
           }
           else {
-            this.updatePixel(this.currentAva(), nextPos);
+            this.updatePixel(this.currentAva(), this.currentPos, nextPos);
             this.currentPos = nextPos;
             if (this.currentPos[1] === 7)
               this.game.win();
-              this.checkGlass(nextPos);
+            this.checkGlass(nextPos);
         }
-      console.log(this.currentPos);
+     
       //}
     });
     rightBridge.addEventListener("click", (event) => {
@@ -88,14 +89,13 @@ class Game {
           alert('You could only choose the spots on the next row!');
         }
         else {
-          this.updatePixel(this.currentAva(), );
+          this.updatePixel(this.currentAva(), this.currentPos, nextPos);
           this.currentPos = nextPos;
-          if (this.currentPos[1] === 7)
+          if (this.currentPos[1] === 7) 
             this.game.win();
-          // this.checkGlass(nextPos);
+          this.checkGlass(nextPos);     
         }
       //}
-      console.log(this.currentPos);
       if (this.currentPos[1] === 7)
         this.game.win();
     });
@@ -115,27 +115,38 @@ class Game {
     // }
   }
 
-  checkGlass(nextPos) {
-    if (this.bridge[nextPos[0]], [nextPos[1]] === "regular") {
-      //do the broken glass animation
-      // this.listofAvatars.pop();
+  checkGlass(curPos) {
+    if (this.bridge[curPos[0]], [curPos[1]] === "regular") {
       if (this.numofAvatar != 0) {
+        //do the broken glass animation
+        // this.listofAvatars.pop();
         // GameView.draw()
         //clear one avatar and restart
+        console.log("yo");
       }
       else
         this.gameover();
     }
     else {
-      this.passedby.push(this.currentPos[1] === 0 ? [this.currentPos[0], 1] : [this.currentPos[0], 0]);
-      GameView.draw();
-     
+      this.game_view.draw();
     }
-      
   }
 
-  updatePixel() {
-    if (this.currentPos[])
+  updatePixel(ava, pre, cur) {
+    if (pre[0] != cur[0] && pre[0] === 0) 
+      ava.pos[0] += 175;
+    else if (pre[0] != cur[0] && pre[0] === 1) 
+      ava.pos[0] -= 175;
+
+
+    if (ava.pos[1] === 750) {
+      ava.pos[1] = 665;
+      ava.pos[0] = cur[0] === 0 ? 100 : 275;
+    }
+    else
+      ava.pos[1] = ava.pos[1] - 85.1;
+    console.log(cur);
+    console.log(ava.pos);
   }
 
 

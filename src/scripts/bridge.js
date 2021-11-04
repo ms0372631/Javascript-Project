@@ -1,12 +1,11 @@
-import TemperedGlass from "./tempered_glass";
-import RegularGlass from "./regular_glass";
+
+// import { cosh } from "core-js/core/number";
 
 class Bridge {
   constructor(ctx) {
     this.ctx = ctx;
     this.grid = [];
-    this.posofReg = [];
-    this.posofTemp = [];
+    this.defaultPos = [50, 700];
     this.buildBridge();
   }
   
@@ -52,17 +51,13 @@ class Bridge {
 
   buildBridge() {
     const random = ["regular", "tempered"];
-    const grid = [];
-    for (let i = 0; i < 8; i++) {
+    let grid = [];
+    for (let i = 0; i < 7; i++) {
       if (random[Math.floor(Math.random() * 2)] === "regular") {
         grid.push(["regular", "tempered"]);
-        this.posofReg.push([i, 0]);
-        this.posofTemp.push([i, 1]);
       }
       else {
         grid.push(["tempered", "regular"]);
-        this.posofReg.push([i, 1]);
-        this.posofTemp.push([i, 0]);
       }
     }
     return grid;

@@ -2,9 +2,9 @@ import Game from "./game";
 import Bridge from "./bridge";
 
 class Avatar {
-  constructor(ctx) {
+  constructor(ctx, pos) {
     this.ctx = ctx;
-    this.pos = [-1, -1];
+    this.pos = pos;
   }
 
   draw() {
@@ -12,6 +12,7 @@ class Avatar {
     ava.src = "./dist/assets/images/avatar.png";
     
     ava.onload = () => {
+      console.log(this.pos);
       this.ctx.drawImage(ava, this.pos[0], this.pos[1], 75, 75);
     };
   }

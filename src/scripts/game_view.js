@@ -1,8 +1,5 @@
 
 import Game from "./game";
-import TemperedGlass from "./tempered_glass";
-import RegularGlass from "./regular_glass";
-
 
 
 
@@ -39,7 +36,7 @@ class GameView {
     };
     background.src = "./dist/assets/images/background.png";
 
-    this.bridge.draw(this.game.listofAvatars, this.avaPos);
+    this.bridge.draw(this.game.listofAvatars);
     // this.avatar.draw();
 
     // let i = 0;

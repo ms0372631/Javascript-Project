@@ -16,7 +16,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const music = document.getElementById("music");
   const text = document.getElementById("text");
   const grids = document.getElementsByClassName("grid");
-
+  game.game_view = game_view;
   startButton.removeAttribute("hidden");
   startButton.addEventListener("click", () => {
     game_view.draw();
