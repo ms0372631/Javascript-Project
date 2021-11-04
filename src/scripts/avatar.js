@@ -5,7 +5,7 @@ class Avatar {
   constructor(ctx, pixel, id) {
     this.ctx = ctx;
     this.pixel = pixel;
-    this.pos = [-1, -1];
+    this.pos = [-1, 0];
     this.id = id;
   }
 

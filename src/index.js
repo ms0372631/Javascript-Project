@@ -27,6 +27,7 @@ window.addEventListener("DOMContentLoaded", () => {
     startButton.setAttribute("hidden", null);
     musicButton.removeAttribute("hidden");
     music.play();
+    game.showRegularGlass();
   });
 
   // restartButton.addEventListener("click", () => {

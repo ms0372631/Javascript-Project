@@ -15,14 +15,42 @@ class Game {
     this.levelStarted = false;
     this.gameOver = false;
     this.currentPos = [-1, -1];
-    this.passedby = [];
+    this.passedbyId = [];
     this.defaultPos = [-60, 750];
+    this.regular = [];
     this.CreateAvatars();
+    this.collectRegularGlass();
     this.Make_move();
     // setInterval(this.Timer.bind(this), 1000);
- 
 } 
 
+  collectRegularGlass() {
+    for (let i = 0; i < this.bridge.grid.length - 1; i++) {
+      if (this.bridge.grid[i][0] === "regular")
+        this.regular.push([i, 0]);
+      else
+        this.regular.push([i, 1]);
+    }
+  }
+
+  hideRegularGlass() {
+    for (let i = 0; i < this.regular.length; i++) {
+      const el = document.getElementById(`${this.regular[i][0]}${this.regular[i][1]}`);
+      el.style.backgroundColor = "";
+      el.style.opacity = "";
+    }
+  }
+
+ showRegularGlass() { 
+  for (let i = 0; i < this.regular.length; i++) {
+    const el = document.getElementById(`${this.regular[i][0]}${this.regular[i][1]}`);
+    console.log(el);
+    el.style.backgroundColor = "red";
+    el.hidden = false;
+    el.style.opacity = "0.5";
+  }
+   setTimeout(this.hideRegularGlass.bind(this), 3000);
+ }
 
   startNewLevel() {
     this.levelStarted = true;
@@ -97,15 +125,25 @@ class Game {
         this.listofAvatars.pop();
         this.passedby = [];
         this.game_view.draw();
+        while (this.passedbyId.length > 0) {
+          const cur = this.passedbyId.pop();
+          cur.style.backgroundColor = "";
+          cur.style.opacity = "";
+        }
         //clear one avatar and restart
     if (this.listofAvatars.length === 0)
         this.gameover();
     }
     else {
       //collect all the bad glasses
+      const passedGlassPos = this.currentAva().pos[1] === 0 ? [this.currentAva().pos[0], 1] : [this.currentAva().pos[0], 0];
+      const el = document.getElementById(`${passedGlassPos[0]}${passedGlassPos[1]}`);
+      if (passedGlassPos[0]!= -1) {
+        el.style.backgroundColor = "red";
+        el.style.opacity = "0.5";
+        this.passedbyId.push(el);
+      }
       this.currentAva().pos = nextPos;
-      this.passedby.push(nextPos[1] === 0 ? [nextPos[0], 1] : [nextPos[0], 0]);
-      // document.getElementById("${pos}");
       this.game_view.draw();
     }
   }
@@ -148,6 +186,7 @@ class Game {
 
   gameover() {
     alert("You have lost the game!");
+
   }
 }
 
