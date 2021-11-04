@@ -14,11 +14,34 @@
 </head>
 
 <body>
-  
+  <ul hidden id="bridgeleft" class="grid">
+    <li id="06" hidden class="grid">0,6</li>
+    <li id="05" hidden class="grid">0,5</li>
+    <li id="04" hidden class="grid">0,4</li>
+    <li id="03" hidden class="grid">0,3</li>
+    <li id="02" hidden class="grid">0,2</li>
+    <li id="01" hidden class="grid">0,1</li>
+    <li id="00" hidden class="grid">0,0</li>
+  </ul>
+  <ul hidden id="bridgeright" class="grid">
+    <li id="16" hidden class="grid">1,6</li>
+    <li id="15" hidden class="grid">1,5</li>
+    <li id="14" hidden class="grid">1,4</li>
+    <li id="13" hidden class="grid">1,3</li>
+    <li id="12" hidden class="grid">1,2</li>
+    <li id="11" hidden class="grid">1,1</li>
+    <li id="10" hidden class="grid">1,0</li>
+  </ul>
  
-  <span hidden id="music-btn" class="game-btn">Mute</span>
+  <span hidden id="music-btn" class="game-btn">-MUTE--</span>
   <div id="canvas-container">
-    <canvas id="canvas" width="450" height="875"></canvas>
+    <canvas id="canvas" width="450" height="875">
+      <h1 hidden id="ava1"> </h1>
+      <h1 hidden id="ava2"></h1>
+      <h1 hidden id="ava3"></h1>
+      
+
+    </canvas>
     <span id="start" class="game-menu">
       <span hidden id="start-btn" class="game-btn" >Start</span>
       <span id="game-over" class="game-menu">

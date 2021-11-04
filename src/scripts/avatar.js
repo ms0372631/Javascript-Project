@@ -4,26 +4,19 @@ import Bridge from "./bridge";
 class Avatar {
   constructor(ctx) {
     this.ctx = ctx;
+    this.pos = [-1, -1];
   }
 
   draw() {
-    while (this.game.listofAvatars--) {
-      var ava = new Image();
-      var currentAva = this.game.listofAvatars.pop();
-      ava.onload = () => {
-        this.ctx.drawImage(ava, this.avaPosX, 125, 125);
-      };
-
-      avatar.src = "./dist/assets/images/bridges.png";
-    }
+    var ava = new Image();
+    ava.src = "./dist/assets/images/avatar.png";
+    
+    ava.onload = () => {
+      this.ctx.drawImage(ava, this.pos[0], this.pos[1], 75, 75);
+    };
   }
 
-  makeMove(i ,j) {
-    if (Bridge.bridge[i][j]) {
 
-    }
-
-  }
 
   // loadImage() {
   //   if (backgroundReady) {

@@ -7,7 +7,7 @@
     "@babel/core": "^7.16.0",
     "@babel/preset-env": "^7.16.0",
     "babel-loader": "^8.2.3",
-    "core-js": "^3.19.0",
+    "core-js": "^3.19.1",
     "css-loader": "^6.5.0",
     "mini-css-extract-plugin": "^2.4.3",
     "regenerator-runtime": "^0.13.9",

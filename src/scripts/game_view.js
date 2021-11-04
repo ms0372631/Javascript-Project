@@ -11,9 +11,9 @@ class GameView {
     this.numofAvatar = game.numofAvatar;
     this.bridge = bridge;
     this.game = game;
-    this.numofAvatar = 3;
+    this.numofAvatar = 2;
     this.ctx = ctx;
-    this.avaPosX = 250;
+
     // this.bridge = bridge;
     // this.$canvas = $("#canvas");
     // this.$canvasOffset = $canvas.offset();
@@ -24,41 +24,36 @@ class GameView {
     this.backgroundReady = false;
    
     this.isDown = false;
-
-
-
     // this.ctx.addEventListener("mousedown", this.handleMouseDown);
     // this.ctx.addEventListener("mouseup", this.handleMouseUp);
     // this.ctx.addEventListener("mouseout", this.handleMouseOut);
   }
 
- 
-
   draw() {
-    var timer = new Image()
     var background = new Image();
     var bridge = new Image();
-    timer.onload = () => {
-      this.ctx.drawImage(timer, 250, 250, 450, 875);
-      this.timer.play();
-    };
-    timer.src = ".dist/assets/images/timer.mp4";
+   
   
     background.onload = () => {
       this.ctx.drawImage(background, 0, 0, 450, 875);
     };
     background.src = "./dist/assets/images/background.png";
 
-    this.bridge.draw();
+    this.bridge.draw(this.game.listofAvatars, this.avaPos);
     // this.avatar.draw();
 
-    while (this.numofAvatar--) {
-      currAva = this.numofAvatar.pop();
-      currAva.draw();
-    }
+    // let i = 0;
+    // while (i < this.numofAvatar) {
+    //   const currAva = this.game.listofAvatars[i];
+    //   currAva.draw(this.avaPosX);
+    //   this.avaPosX += 175;
+    //   i++;
+    // }
+  }
 
-
-    
+  showGlasses () {
+    //show diffrent colors based on the type of glass on this.passed
+  }
 
   
     // this.ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -69,12 +64,8 @@ class GameView {
     //     this.ctx.stroke();
     //   }
     // }
-  }
-
   
-  static ClassMethod() {
-      // ...logic not specific to an instance
-  }
+  
   
   handleMouseDown(e) {
     e.preventDefault();
