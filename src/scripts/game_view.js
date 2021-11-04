@@ -8,7 +8,6 @@ class GameView {
     this.numofAvatar = game.numofAvatar;
     this.bridge = bridge;
     this.game = game;
-    this.numofAvatar = 2;
     this.ctx = ctx;
 
     // this.bridge = bridge;

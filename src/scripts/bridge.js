@@ -51,16 +51,16 @@ class Bridge {
 
   buildBridge() {
     const random = ["regular", "tempered"];
-    let grid = [];
     for (let i = 0; i < 7; i++) {
       if (random[Math.floor(Math.random() * 2)] === "regular") {
-        grid.push(["regular", "tempered"]);
+        this.grid.push(["regular", "tempered"]);
       }
       else {
-        grid.push(["tempered", "regular"]);
+        this.grid.push(["tempered", "regular"]);
       }
     }
-    return grid;
+    this.grid.push(["endpoint, endpoint"]);
+    console.log(this.grid);
   }
  
 }

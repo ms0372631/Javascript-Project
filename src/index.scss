@@ -24,9 +24,10 @@ body {
 ul {
     display: flex;
     position: relative;
-    bottom: -6px;
+    bottom: 35px;
     flex-wrap: wrap;
     width: 100px;
+    margin: 0px;
     list-style: none;
     z-index: 35;
 
@@ -41,7 +42,7 @@ ul {
 }
 
 li:hover {
-  background-color: transparent;
+  background-color: grey; opacity: 0.3;
 }
 
 li {
@@ -49,7 +50,7 @@ li {
     height: 79px;
     margin: 10px transparent;
     border: 1px solid transparent;
-    background-color: grey; opacity: 0.3;
+    background-color: transparent;
     margin: 2px;
 }
 
@@ -101,7 +102,7 @@ li {
 
 #start-btn {
  position: relative;
- left: 300px;
+ left: 250px;
  bottom: 250px; 
  z-index: 30;
 }
@@ -112,3 +113,6 @@ li {
 #final {
   font-size: 40px;
 }
+
+
+

@@ -20,25 +20,23 @@ class Game {
     this.CreateAvatars();
     this.Make_move();
     // setInterval(this.Timer.bind(this), 1000);
-    // posMap = {
-    //   "01": [],
-    //   ""
-    // };
+ 
 } 
 
 
   startNewLevel() {
     this.levelStarted = true;
     this.level++;
-
   }
 
   CreateAvatars() {
+    let i = 1;
     while (this.listofAvatars.length < this.numofAvatar) {
       this.defaultPos[0] += 125;
       let dup = this.defaultPos.slice();
-      const newAva = new Avatar(this.ctx, dup);
+      const newAva = new Avatar(this.ctx, dup, i);
       this.listofAvatars.push(newAva);
+      i++;
     }
   }
   
@@ -66,87 +64,63 @@ class Game {
     const leftBridge = document.getElementById("bridgeleft");
     const rightBridge = document.getElementById("bridgeright");
     leftBridge.addEventListener("click", (event) => {
-      // if (event.target.tagName === "li") {
         const nextPos = [parseInt(event.target.id[0], 10), parseInt(event.target.id[1], 10)];
-          if (nextPos[1] != this.currentPos[1] + 1) {
+          if (nextPos[0] != this.currentAva().pos[0] + 1) {
+  
             alert('You could only choose the spots on the next row!');
-            // this.Make_move();
           }
           else {
-            this.updatePixel(this.currentAva(), this.currentPos, nextPos);
-            this.currentPos = nextPos;
-            if (this.currentPos[1] === 7)
-              this.game.win();
-            this.checkGlass(nextPos);
+            this.updatePixel(this.currentAva(), this.currentAva().pos, nextPos);
+            this.checkGlass(this.currentAva().pos, nextPos);
+            if (this.currentAva().pos[0] === 7)
+              this.win();
         }
-     
-      //}
     });
     rightBridge.addEventListener("click", (event) => {
-      //if (event.target.tagName === "li") {
         const nextPos = [parseInt(event.target.id[0], 10), parseInt(event.target.id[1], 10)];
-        if (nextPos[1] != this.currentPos[1] + 1) {
+        if (nextPos[0] != this.currentAva().pos[0] + 1) {
+          console.log(this.currentAva().pos, nextPos);
           alert('You could only choose the spots on the next row!');
         }
         else {
-          this.updatePixel(this.currentAva(), this.currentPos, nextPos);
-          this.currentPos = nextPos;
-          if (this.currentPos[1] === 7) 
-            this.game.win();
-          this.checkGlass(nextPos);     
+          this.updatePixel(this.currentAva(), this.currentAva().pos, nextPos);
+          this.checkGlass(this.currentAva().pos, nextPos);
+          if (this.currentAva().pos[0] === 7)
+            this.win();
         }
-      //}
-      if (this.currentPos[1] === 7)
-        this.game.win();
     });
-    
-    // for (let step of steps) {
-    //   step.addEventListener("click", () => {
-    //     const nextPos = [parseInt(step.id[0], 10), parseInt(step.id[1], 10)];
-    //     console.log(nextPos);
-    //     if (nextPos[1] != this.currentsPos[1]) {
-    //       alert('You could only choose the spots on the next row!');
-    //     }
-    //     else {
-    //       this.checkGlass(nextPos);
-
-    //     }
-    //   });
-    // }
   }
 
-  checkGlass(curPos) {
-    if (this.bridge[curPos[0]], [curPos[1]] === "regular") {
-      if (this.numofAvatar != 0) {
+  checkGlass(curPos, nextPos) {
+    if (this.bridge.grid[nextPos[0]][nextPos[1]] === "regular") {
         //do the broken glass animation
-        // this.listofAvatars.pop();
-        // GameView.draw()
+        this.listofAvatars.pop();
+        this.passedby = [];
+        this.game_view.draw();
         //clear one avatar and restart
-        console.log("yo");
-      }
-      else
+    if (this.listofAvatars.length === 0)
         this.gameover();
     }
     else {
+      //collect all the bad glasses
+      this.currentAva().pos = nextPos;
+      this.passedby.push(nextPos[1] === 0 ? [nextPos[0], 1] : [nextPos[0], 0]);
+      // document.getElementById("${pos}");
       this.game_view.draw();
     }
   }
 
   updatePixel(ava, pre, cur) {
-    if (pre[0] != cur[0] && pre[0] === 0) 
-      ava.pos[0] += 175;
-    else if (pre[0] != cur[0] && pre[0] === 1) 
-      ava.pos[0] -= 175;
-
-
-    if (ava.pos[1] === 750) {
-      ava.pos[1] = 665;
-      ava.pos[0] = cur[0] === 0 ? 100 : 275;
+    if (pre[1] != cur[1] && pre[1] === 0) 
+      ava.pixel[0] += 175;
+    else if (pre[1] != cur[1] && pre[1] === 1) 
+      ava.pixel[0] -= 175;
+    if (ava.pixel[1] === 750) {
+      ava.pixel[1] = 665;
+      ava.pixel[0] = cur[1] === 0 ? 100 : 275;
     }
     else
-      ava.pos[1] = ava.pos[1] - 85.1;
-    console.log(cur);
-    console.log(ava.pos);
+      ava.pixel[1] = ava.pixel[1] - 86;
   }
 
 
@@ -157,14 +131,6 @@ class Game {
     
   }
 
-
-  start() {
-    // this.toggleScene('start');
-    this.startNewLevel();
-
-    //image hide 
-    //image show
-  }
 
   play() {
     this.toggleScene('');
@@ -177,11 +143,11 @@ class Game {
   }
 
   win() {
-    //you win the game message
+    alert('You have won the game!');
   }
 
   gameover() {
-    //you lose and restart button
+    alert("You have lost the game!");
   }
 }
 
