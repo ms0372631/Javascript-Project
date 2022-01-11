@@ -13,6 +13,7 @@
   <title>Welcome to the Squid Game</title>
 </head>
 <body>
+  
   <div class="gameplay-container">
     <ul hidden id="bridgeleft" class="grid">
       <li id="70" hidden class="grid"></li>
@@ -34,42 +35,43 @@
       <li id="21" hidden class="grid"></li>
       <li id="11" hidden class="grid"></li>
       <li id="01" hidden class="grid"></li>
-    </ul>
-      
-   
-    <div hidden id="music-btn" class="game-btn">MUTE</div>
+    </ul>  
   </div>
-  <div id="canvas-container">
-    <canvas id="canvas" width="450" height="875">
+  <div class="btn-container">
+    <div hidden id="music-btn" class="game-btn">Mute</div>
+    <div hidden id="replay-btn" class="game-btn">Play Again</div>
+  </div>
+    <canvas hidden id="canvas" width="450" height="875">
       <h1 hidden id="ava1"> </h1>
       <h1 hidden id="ava2"></h1>
       <h1 hidden id="ava3"></h1>
     </canvas>
-    <span hidden id="start-btn" class="game-btn" >Start</span>
     <span id="game-over" class="game-menu">
       <span hidden id="final">Game Over</span>
       <span hidden id="final">Final Score <span id="final-score">0</span></span>
       <span hidden id="restart-btn" class="game-btn">Play again</span>
     </span>
   </span>
-  
-</div>
-<div id="text">
-  <p id="text-one">
-    Are you ready for one of the most exciting stages of the Squid Game ? Try your best to win $38M and enjoy the
-    rest of your life not worrying about a thing!
-  </p>
-  <p id="text-two">
-    Welcome to the Squid Game Glass Bridge Stage.
-  </p>
-  <p id="text-three">
-    In the beginning of the game, before light downs off, red spots represent regular piecies of glass which you do not want to step on.
-  </p>
-  <p id="text-four">
-    Try to get your way throught the end point and get the prize!
-  </p>
-  <img class="prize" src="/dist/assets/images/favpng_trophy-award-prize.png" alt="">
-</div>
+
+  <div id="text">
+    <p id="text-one">
+      Are you ready for one of the most exciting stages of the Squid Game ? Try your best to win $38M and enjoy the
+      rest of your life not worrying about a thing!
+    </p>
+    <p id="text-two">
+      Welcome to the Squid Game Glass Bridge Stage.
+    </p>
+    <p id="text-three">
+      In the beginning of the game, before light downs off, red spots represent regular piecies of glass which you do not want to step on.
+    </p>
+    <p id="text-four">
+      Try to get your way throught the end point and get the prize!
+    </p>
+    <div class="start-container">
+      <img class="prize" src="/dist/assets/images/favpng_trophy-award-prize.png" alt="">
+      <span hidden id="start-btn" class="game-btn">Start</span>
+    </div>
+  </div>
 <span id="start" class="game-menu">
 
 </body>

@@ -10,8 +10,9 @@ window.addEventListener("DOMContentLoaded", () => {
   const bridge = new Bridge(ctx2d);
   const game = new Game(ctx2d, bridge);
   const game_view = new GameView(game, ctx2d, bridge);
+  const canvasContainer = document.getElementsByClassName('btn-container')
   const startButton = document.getElementById("start-btn");
-  const restartButton = document.getElementById("restart-btn");
+  const replayButton = document.getElementById("replay-btn");
   const musicButton = document.getElementById("music-btn");
   const music = document.getElementById("music");
   const text = document.getElementById("text");
@@ -25,6 +26,7 @@ window.addEventListener("DOMContentLoaded", () => {
     }
     text.setAttribute("hidden", null);
     startButton.setAttribute("hidden", null);
+    canvas.removeAttribute('hidden');
     musicButton.removeAttribute("hidden");
     music.play();
     game.showRegularGlass();
@@ -38,12 +40,25 @@ window.addEventListener("DOMContentLoaded", () => {
     e.stopPropagation();
     if (music.paused) {
       music.play();
-      musicButton.innerText = "MUTE";
+      musicButton.innerText = "Mute";
     } else {
       music.pause();
-      musicButton.innerText = "UNMUTE";
+      musicButton.innerText = "Unmute";
     }
   });
 
-
+  replayButton.addEventListener("click", e => {
+    replayButton.setAttribute("hidden", null);
+    for (let i = 0; i < grids.length; i++) {
+      grids[i].removeAttribute("hidden");
+    }
+    text.setAttribute("hidden", null);
+    startButton.setAttribute("hidden", null);
+    musicButton.removeAttribute("hidden");
+    music.play();
+    const game = new Game(ctx2d, bridge);
+    const game_view = new GameView(game, ctx2d, bridge);
+    game.game_view = game_view;
+    game.showRegularGlass();
+  })
 });

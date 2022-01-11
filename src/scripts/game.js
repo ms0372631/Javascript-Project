@@ -21,7 +21,6 @@ class Game {
     this.CreateAvatars();
     this.collectRegularGlass();
     this.Make_move();
-    // setInterval(this.Timer.bind(this), 1000);
 } 
 
   collectRegularGlass() {
@@ -182,10 +181,14 @@ class Game {
 
   win() {
     alert('You have won the game!');
+    const replayBtn = document.getElementById("replay-btn");
+    replayBtn.removeAttribute("hidden");
   }
 
   gameover() {
     alert("You have lost the game!");
+    const replayBtn = document.getElementById("replay-btn");
+    replayBtn.removeAttribute("hidden");
 
   }
 }
