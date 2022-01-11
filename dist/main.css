@@ -5,10 +5,13 @@ body {
   background-image: url("https://geekculture.co/wp-content/uploads/2021/10/squid-game-background-7.jpg");
   height: 100vh;
   width: 100vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-size: 100%;
+  background-size: 100vh 100hw;
   background-repeat: no-repeat;
   z-index: -1;
 }
@@ -62,7 +65,10 @@ li:hover {
   z-index: 10;
 }
 
-
+.prize {
+  height: 100px;
+  width: 100px;;
+}
 
 .game-btn {
   font-family: "Capsule Sans Display",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
@@ -97,22 +103,33 @@ li:hover {
 }
 
 #text {
-  background-color: rgba(59, 199, 59, 0.5);
+  height: 500px;
+  width: 750px;
+  padding: 20px;
+  background-color: rgba(59, 199, 59);
   font-family: Optima, sans-serif;
   font-size: x-large;
   font-weight: bolder;
+  border: 5px solid purple; 
   color: purple;
   text-align: center;
   position: absolute;
   z-index: 20;
+  border-radius: 25px;
 }
 
 
 #start-btn {
-  position: relative;
-  left: 250px;
-  bottom: 250px;
+  position: absolute;
+  left: 215px;
+  bottom: 185px;
+  font-size: 20px;
   z-index: 30;
+  text-align: center;
+}
+
+#text-three {
+  color: red;
 }
 
 #music-btn {
@@ -131,3 +148,4 @@ li:hover {
   display: flex;
   flex-direction: row;
 }
+
