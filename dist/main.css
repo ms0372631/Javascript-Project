@@ -106,7 +106,7 @@ li:hover {
   height: 500px;
   width: 750px;
   padding: 20px;
-  background-color: rgba(59, 199, 59);
+  background-color: rgb(80, 151, 209);
   font-family: Optima, sans-serif;
   font-size: x-large;
   font-weight: bolder;
@@ -129,7 +129,7 @@ li:hover {
 }
 
 #text-three {
-  color: red;
+  color: orange
 }
 
 #music-btn {
