@@ -38,7 +38,7 @@ window.addEventListener("DOMContentLoaded", () => {
     e.stopPropagation();
     if (music.paused) {
       music.play();
-      musicButton.innerText = "-MUTE--";
+      musicButton.innerText = "MUTE";
     } else {
       music.pause();
       musicButton.innerText = "UNMUTE";

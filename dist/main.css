@@ -2,11 +2,13 @@
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
   \*************************************************************************************************************************************/
 body {
-  background-image: url("https://img2.goodfon.com/wallpaper/nbig/e/5e/rayman-legends-game-2566.jpg");
+  background-image: url("https://geekculture.co/wp-content/uploads/2021/10/squid-game-background-7.jpg");
+  height: 100vh;
+  width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-size: auto 100%;
+  background-size: 100%;
   background-repeat: no-repeat;
   z-index: -1;
 }
@@ -26,34 +28,32 @@ body {
 ul {
   display: flex;
   position: relative;
-  bottom: 35px;
+  bottom: 31.65px;
   flex-wrap: wrap;
-  width: 100px;
+  width: 92px;
   margin: 0px;
   list-style: none;
   z-index: 35;
 }
 
+li {
+  width: 93px;
+  height: 69.5px;
+  color: transparent;
+  margin-bottom: 16px;
+}
+
 #bridgeleft {
-  right: -235px;
+  right: -270px;
 }
 
 #bridgeright {
-  left: 270px;
+  left: 313px;
 }
 
 li:hover {
   background-color: grey;
   opacity: 0.3;
-}
-
-li {
-  width: 100px;
-  height: 79px;
-  margin: 10px transparent;
-  border: 1px solid transparent;
-  color: transparent;
-  margin: 2px;
 }
 
 #canvas {
@@ -62,15 +62,23 @@ li {
   z-index: 10;
 }
 
+
+
 .game-btn {
-  color: red;
-  font-family: fantasy;
-  font-size: x-large;
-  position: relative;
-  left: 100px;
-  bottom: 10px;
-  background-color: greenyellow;
-  z-index: 20;
+  font-family: "Capsule Sans Display",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  padding: 10px 15px;
+  width: 85px;
+  height: 25px;
+  font-weight: bold;
+  color: white;
+  background-color: #F28705;
+  /* margin-top: -0.9em; */
+  z-index: 1;
+  border-radius: 25px;
+  border: none;
+  margin: 20px;
+  cursor: pointer;
 }
 
 .game-btn:hover {
@@ -99,6 +107,7 @@ li {
   z-index: 20;
 }
 
+
 #start-btn {
   position: relative;
   left: 250px;
@@ -107,10 +116,18 @@ li {
 }
 
 #music-btn {
+  position: relative;
+  top: 300px;
   left: 400px;
-  margin-left: 25px;
+  font-size: 20px;
+  text-align: center;
 }
 
 #final {
   font-size: 40px;
+}
+
+.gameplay-container {
+  display: flex;
+  flex-direction: row;
 }

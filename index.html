@@ -13,29 +13,32 @@
   <title>Welcome to the Squid Game</title>
 </head>
 <body>
-  <ul hidden id="bridgeleft" class="grid">
-    <li id="70" hidden class="grid"></li>
-    <li id="60" hidden class="grid"></li>
-    <li id="50" hidden class="grid"></li>
-    <li id="40" hidden class="grid"></li>
-    <li id="30" hidden class="grid"></li>
-    <li id="20" hidden class="grid"></li>
-    <li id="10" hidden class="grid"></li>
-    <li id="00" hidden class="grid"></li>
-  </ul>
-  
-  <ul hidden id="bridgeright" class="grid">
-    <li id="71" hidden class="grid"></li>
-    <li id="61" hidden class="grid"></li>
-    <li id="51" hidden class="grid"></li>
-    <li id="41" hidden class="grid"></li>
-    <li id="31" hidden class="grid"></li>
-    <li id="21" hidden class="grid"></li>
-    <li id="11" hidden class="grid"></li>
-    <li id="01" hidden class="grid"></li>
-  </ul>
- 
-  <span hidden id="music-btn" class="game-btn">-MUTE--</span>
+  <div class="gameplay-container">
+    <ul hidden id="bridgeleft" class="grid">
+      <li id="70" hidden class="grid"></li>
+      <li id="60" hidden class="grid"></li>
+      <li id="50" hidden class="grid"></li>
+      <li id="40" hidden class="grid"></li>
+      <li id="30" hidden class="grid"></li>
+      <li id="20" hidden class="grid"></li>
+      <li id="10" hidden class="grid"></li>
+      <li id="00" hidden class="grid"></li>
+    </ul>
+    
+    <ul hidden id="bridgeright" class="grid">
+      <li id="71" hidden class="grid"></li>
+      <li id="61" hidden class="grid"></li>
+      <li id="51" hidden class="grid"></li>
+      <li id="41" hidden class="grid"></li>
+      <li id="31" hidden class="grid"></li>
+      <li id="21" hidden class="grid"></li>
+      <li id="11" hidden class="grid"></li>
+      <li id="01" hidden class="grid"></li>
+    </ul>
+      
+   
+    <div hidden id="music-btn" class="game-btn">MUTE</div>
+  </div>
   <div id="canvas-container">
     <canvas id="canvas" width="450" height="875">
       <h1 hidden id="ava1"> </h1>

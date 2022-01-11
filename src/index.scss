@@ -71,6 +71,8 @@ li {
   bottom: 10px;
   background-color: greenyellow;
   z-index: 20;
+  padding: 25px;
+  border-radius: 25px;
 }
 
 .game-btn:hover {
@@ -109,7 +111,6 @@ li {
 
 #music-btn {
   left: 400px;
-  margin-left: 10px;
 }
 #final {
   font-size: 40px;
