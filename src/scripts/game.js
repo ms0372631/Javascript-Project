@@ -18,6 +18,7 @@ class Game {
     this.passedbyId = [];
     this.defaultPos = [-60, 750];
     this.regular = [];
+    this.winStatus = false;
     this.CreateAvatars();
     this.collectRegularGlass();
     setTimeout(() => this.Make_move(), 3000);
@@ -91,14 +92,14 @@ class Game {
     const rightBridge = document.getElementById("bridgeright");
     leftBridge.addEventListener("click", (event) => {
         const nextPos = [parseInt(event.target.id[0], 10), parseInt(event.target.id[1], 10)];
+        console.log(this.currentAva())
           if (nextPos[0] !== this.currentAva().pos[0] + 1) {
-            console.log(this.currentAva().pos, nextPos);
             alert('You could only choose the spots on the next row!');
           }
           else {
             this.updatePixel(this.currentAva(), this.currentAva().pos, nextPos);
             this.checkGlass(this.currentAva().pos, nextPos);
-            if (this.currentAva().pos[0] === 7)
+            if (this.currentAva().pos[0] === 7) 
               this.win();
         }
     });
@@ -178,25 +179,19 @@ class Game {
 
   }
 
-  drawPrize() {
-    var prize = new Image();
-    prize.src =  "./dist/assets/images/price.png";
-    prize.onload = () => {
-      this.ctx.drawImage(prize, 150, 50, 100, 100);
-    }
-  }
+
 
   win() {
-    alert('You have won the game!');
-    this.drawPrize();
     const replayBtn = document.getElementById("replay-btn");
     replayBtn.removeAttribute("hidden");
+    this.winStatus = true;
+    alert('You have won the game!');
   }
 
   gameover() {
-    alert("You have lost the game!");
     const replayBtn = document.getElementById("replay-btn");
     replayBtn.removeAttribute("hidden");
+    alert("You have lost the game!");
   }
 }
 

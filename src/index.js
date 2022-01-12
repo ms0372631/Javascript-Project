@@ -19,6 +19,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const text = document.getElementById("text");
   const grids = document.getElementsByClassName("grid");
   game.game_view = game_view;
+  bridge.game = game;
   startButton.removeAttribute("hidden");
   startButton.addEventListener("click", () => {
     game_view.draw();
@@ -52,18 +53,6 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
   replayButton.addEventListener("click", e => {
-    replayButton.setAttribute("hidden", null);
-    for (let i = 0; i < grids.length; i++) {
-      grids[i].removeAttribute("hidden");
-    }
-    text.setAttribute("hidden", null);
-    startButton.setAttribute("hidden", null);
-    musicButton.removeAttribute("hidden");
-    music.play();
-    const game = new Game(ctx2d, bridge);
-    const game_view = new GameView(game, ctx2d, bridge);
-    game.game_view = game_view;
-    game.showRegularGlass();
-    game_view.draw();
+    location.reload();
   })
 });

@@ -9,6 +9,13 @@ class Bridge {
     this.buildBridge();
   }
   
+  drawPrize() {
+    var prize = new Image();
+    prize.src =  "./dist/assets/images/prize.png";
+    prize.onload = () => {
+      this.ctx.drawImage(prize, 175, 25, 100, 100);
+    }
+  }
 
   drawBridge() {
     let bridge1 = new Image();
@@ -30,6 +37,9 @@ class Bridge {
     finishline.onload = () => {
       this.ctx.drawImage(finishline, 0, 0, 450, 150);
       this.drawBridge();
+      if (this.game.winStatus === true) {
+        this.drawPrize();
+      }
     };
   }
 
