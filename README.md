@@ -1,6 +1,6 @@
 [Live Demo](https://ms0372631.github.io/SquidGame/)
 
-#J Squid Game
+# Squid Game
 
   This project is a recently popular Netflix series "Squid Game" inspired game called the "Glass Bridge". The user would be given a certain amount of avatars that he/she could use to make his/her way through the glass bridge and reach the goal line. At each length of the bridge glass there would be two pieces of glasses in front of the user, with one being the regular piece of glass that would be broken once an avatar steps on it and one being tempered glass where an avatar could step on it. Once an avatar steps on a regular peice of glass, the avatar would fall from the bridge and the broken piece of glass would remain there. The game would continue on until the player loses all the avatars.
 
