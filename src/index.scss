@@ -30,7 +30,7 @@ ul {
   position: relative;
   bottom: 31.65px;
   flex-wrap: wrap;
-  width: 92px;
+  width: 91px;
   margin: 0px;
   list-style: none;
   z-index: 35;
@@ -48,7 +48,7 @@ li {
 }
 
 #bridgeright {
-  left: 80px;
+  left: 78.5px;
 }
 
 li:hover {
@@ -138,8 +138,15 @@ li:hover {
 
 #music-btn {
   position: relative;
-  top: 300px;
-  left: 400px;
+  left: 200px;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+#replay-btn {
+  position: relative;
+  left: 200px;
   font-size: 20px;
   text-align: center;
 }

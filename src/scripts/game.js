@@ -68,7 +68,6 @@ class Game {
   }
   
 
-
   Timer() {
     if (this.timeRemaining == 0)
       this.gameover();

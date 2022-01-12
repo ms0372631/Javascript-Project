@@ -60,5 +60,6 @@ window.addEventListener("DOMContentLoaded", () => {
     const game_view = new GameView(game, ctx2d, bridge);
     game.game_view = game_view;
     game.showRegularGlass();
+    game_view.draw();
   })
 });
