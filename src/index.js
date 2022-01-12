@@ -10,10 +10,10 @@ window.addEventListener("DOMContentLoaded", () => {
   const bridge = new Bridge(ctx2d);
   const game = new Game(ctx2d, bridge);
   const game_view = new GameView(game, ctx2d, bridge);
-  const canvasContainer = document.getElementsByClassName('btn-container')
   const startButton = document.getElementById("start-btn");
   const replayButton = document.getElementById("replay-btn");
   const musicButton = document.getElementById("music-btn");
+  const icons = document.getElementsByClassName("icons");
   const music = document.getElementById("music");
   const text = document.getElementById("text");
   const grids = document.getElementsByClassName("grid");
@@ -23,6 +23,9 @@ window.addEventListener("DOMContentLoaded", () => {
     game_view.draw();
     for (let i = 0; i < grids.length; i++) {
       grids[i].removeAttribute("hidden");
+    }
+    for (let i = 0; i < icons.length; i++) {
+      icons[i].removeAttribute("hidden");
     }
     text.setAttribute("hidden", null);
     startButton.setAttribute("hidden", null);
