@@ -28,7 +28,7 @@ body {
 ul {
   display: flex;
   position: relative;
-  bottom: 31.65px;
+  bottom: 30px;
   flex-wrap: wrap;
   width: 91px;
   margin: 0px;
@@ -101,28 +101,28 @@ li:hover {
 }
 
 #icons-linkedin {
-  position: absolute;
-  right: 300px;
-  top: 50px;
+  position: relative;
+  left: 200px;
   height: 100px;
   width: 100px;
   z-index: 50;
   background-color: #F28705;
   margin-left: 20px;
+  margin-bottom: 50px;
   border-radius: 50%;
   border: 0;
   cursor: pointer;
 }
 
 #icons-github {
-  position: absolute;
-  right: 300px;
-  top: 200px;
+  position: relative;
+  left: 200px;
   height: 100px;
   width: 100px;
   z-index: 50;
   background-color: #F28705;
   margin-left: 20px;
+  margin-bottom: 50px;
   border-radius: 50%;
   border: 0;
   cursor: pointer;
@@ -146,6 +146,11 @@ li:hover {
 
 .startgame-container {
   position: absolute;
+}
+
+.btn-container {
+  display: flex;
+  flex-direction: column;
 }
 
 .start-container {

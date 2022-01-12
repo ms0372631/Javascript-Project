@@ -34,6 +34,7 @@ class Bridge {
   }
 
 
+
   draw(avatars) {
     let platform = new Image();
     platform.src = "./dist/assets/images/platform.png";

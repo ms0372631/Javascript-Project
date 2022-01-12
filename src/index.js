@@ -2,6 +2,7 @@
 import Game from "./scripts/game";
 import GameView from "./scripts/game_view";
 import Bridge from "./scripts/bridge";
+import Avatar from "./scripts/avatar";
 
 window.addEventListener("DOMContentLoaded", () => {
 
