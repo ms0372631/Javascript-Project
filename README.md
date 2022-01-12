@@ -1,4 +1,4 @@
-[Live Demo](https://ms0372631.github.io/SquidGame/)
+[Live Demo](https://ms0372631.github.io/Squid-Game/)
 
 # Squid Game
 
