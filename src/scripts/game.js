@@ -44,7 +44,6 @@ class Game {
  showRegularGlass() { 
   for (let i = 0; i < this.regular.length; i++) {
     const el = document.getElementById(`${this.regular[i][0]}${this.regular[i][1]}`);
-    console.log(el);
     el.style.backgroundColor = "red";
     el.hidden = false;
     el.style.opacity = "0.5";
@@ -92,9 +91,10 @@ class Game {
     const rightBridge = document.getElementById("bridgeright");
     leftBridge.addEventListener("click", (event) => {
         const nextPos = [parseInt(event.target.id[0], 10), parseInt(event.target.id[1], 10)];
-        console.log(this.currentAva())
           if (nextPos[0] !== this.currentAva().pos[0] + 1) {
-            alert('You could only choose the spots on the next row!');
+            const spotNotice = document.getElementById("modal-spots");
+            spotNotice.removeAttribute("hidden");
+            setTimeout(function() {spotNotice.setAttribute("hidden", null);}, 1000);
           }
           else {
             this.updatePixel(this.currentAva(), this.currentAva().pos, nextPos);
@@ -106,8 +106,9 @@ class Game {
     rightBridge.addEventListener("click", (event) => {
         const nextPos = [parseInt(event.target.id[0], 10), parseInt(event.target.id[1], 10)];
         if (nextPos[0] !== this.currentAva().pos[0] + 1 ) {
-          console.log(this.currentAva().pos, nextPos);
-          alert('You could only choose the spots on the next row!');
+          const spotNotice = document.getElementById("modal-spots");
+          spotNotice.removeAttribute("hidden");
+          setTimeout(function() {spotNotice.setAttribute("hidden", null);}, 1000);
         }
         else {
           this.updatePixel(this.currentAva(), this.currentAva().pos, nextPos);
@@ -117,6 +118,8 @@ class Game {
         }
     });
   }
+
+
 
   checkGlass(curPos, nextPos) {
     if (this.bridge.grid[nextPos[0]][nextPos[1]] === "regular") {
@@ -185,13 +188,17 @@ class Game {
     const replayBtn = document.getElementById("replay-btn");
     replayBtn.removeAttribute("hidden");
     this.winStatus = true;
-    alert('You have won the game!');
+    const winNotice = document.getElementById("modal-win");
+    winNotice.removeAttribute("hidden");
+    setTimeout(function() {winNotice.setAttribute("hidden", null);}, 3000);
   }
 
   gameover() {
     const replayBtn = document.getElementById("replay-btn");
     replayBtn.removeAttribute("hidden");
-    alert("You have lost the game!");
+    const loseNotice = document.getElementById("modal-lose");
+    loseNotice.removeAttribute("hidden")
+    setTimeout(function() {loseNotice.setAttribute("hidden", null);}, 3000);
   }
 }
 

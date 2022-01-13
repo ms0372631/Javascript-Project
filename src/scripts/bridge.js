@@ -71,7 +71,6 @@ class Bridge {
       }
     }
     this.grid.push(["endpoint, endpoint"]);
-    console.log(this.grid);
   }
  
 }

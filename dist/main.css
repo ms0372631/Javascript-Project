@@ -5,15 +5,74 @@ body {
   background-image: url("https://geekculture.co/wp-content/uploads/2021/10/squid-game-background-7.jpg");
   height: 100vh;
   width: 100vw;
-  background-position: center;
+  background-position: center center;
   background-repeat: no-repeat;
-  background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-size: 100% 100%;
+  background-size: contain;
   background-repeat: no-repeat;
+  background-size: 100% 100%;
   z-index: -1;
+  margin: 0;
+  padding: 0;
+}
+
+#modal-spots {
+  position: absolute;
+  width: 200px;
+  height: 105px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  background-color: #5097d1;
+  border: 5px solid purple;
+  border-radius: 10px;
+  text-align: center;
+  z-index: 100;
+  font-family: Optima, sans-serif;
+  color: orange;
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+#modal-lose {
+  position: absolute;
+  width: 200px;
+  height: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  background-color: #5097d1;
+  border: 5px solid purple;
+  border-radius: 10px;
+  text-align: center;
+  z-index: 100;
+  font-family: Optima, sans-serif;
+  color: orange;
+  font-size: 22px;
+  font-weight: bolder;
+}
+
+#modal-win {
+  position: absolute;
+  width: 200px;
+  height: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  background-color: #5097d1;
+  border: 5px solid purple;
+  border-radius: 10px;
+  text-align: center;
+  z-index: 100;
+  font-family: Optima, sans-serif;
+  color: orange;
+  font-size: 22px;
+  font-weight: bolder;
 }
 
 #canvas-container {
